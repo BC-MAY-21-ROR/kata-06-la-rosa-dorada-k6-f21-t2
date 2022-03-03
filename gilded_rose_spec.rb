@@ -14,7 +14,13 @@ describe GildedRose do
         GildedRose.new(items).update_quality()
         expect(items[0].sell_in).to eq 0
         expect(items[0].quality).to eq 80
-      end
+    end
+
+    it "reduce quality" do
+      item = Item.new("Conjured Mana Cake", 0, 80)
+      disminuir_calidad(item)
+      expect(item.quality).to eq 78
+    end
   end
 
 end
